@@ -115,6 +115,10 @@ public class Demo1 {
                 .forEach(System.out::println);
 
         empList.stream()
+                .filter(employee -> employee.getSalary() >= 5000)
+                .forEach(System.out::println);
+
+        empList.stream()
                 .map(Employee::getName)
                 .forEach(System.out::println);
     }

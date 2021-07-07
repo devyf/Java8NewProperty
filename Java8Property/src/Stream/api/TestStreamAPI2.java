@@ -71,8 +71,7 @@ public class TestStreamAPI2 {
     @Test
     public void test4(){
         empList.stream()
-                .filter(emp ->{
-                    return emp.getSalary() > 5000; })
+                .filter(emp -> emp.getSalary() > 5000)
                 .skip(2)  //跳过前面两个合适的结果
                 .forEach(System.out::println);
     }
@@ -81,8 +80,7 @@ public class TestStreamAPI2 {
     @Test
     public void test5(){
         empList.stream()
-                .filter(emp ->{
-                    return emp.getSalary() > 5000; })
+                .filter(emp -> emp.getSalary() > 5000)
                 .skip(2)  //跳过前面两个合适的结果
                 .distinct()
                 .forEach(System.out::println);

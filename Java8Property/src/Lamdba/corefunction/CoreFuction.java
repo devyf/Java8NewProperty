@@ -18,16 +18,16 @@ import java.util.function.Supplier;
  * Predicate<T>：断言型接口：boolean test(T t);
  */
 public class CoreFuction {
-    //Consumer接口测试
+    //Consumer<T>：消费型接口测试
     @Test
     public void testConsumer(){
-        consume(1000, m -> System.out.println("每月吃饭，消费" + m  + "元"));
+        consume(1000.56, m -> System.out.println("每月吃饭，消费" + m  + "元"));
     }
     public void consume(double money, Consumer<Double> consumer){
         consumer.accept(money);
     }
 
-    //供给型接口
+    //Supplier<T>：供给型接口测试
     @Test
     public void testSupplier(){
         List<Integer> list = getNumberList(10, () -> (int)(Math.random() * 100));
@@ -42,7 +42,7 @@ public class CoreFuction {
         return list;
     }
 
-    //函数型接口
+    //Function<T, R>：函数型接口
     @Test
     public void testFunction(){
         String handler = strHandler("\t\n  B站资源好又多！   ", str -> str.trim());
@@ -54,10 +54,10 @@ public class CoreFuction {
         return function.apply(str);
     }
 
-    //断言型接口
+    //Predicate<T>：断言型接口
     @Test
     public void testPredicate(){
-        List<String> stringList = Arrays.asList("ded2d2d2", "dd22d", "shangguigu", "de", "枫夜Alex", "ddff");
+        List<String> stringList = Arrays.asList("ded2d2d2", "枫夜dd22d", "shangguigu", "de", "枫夜Alex", "ddff");
         List<String> res = predicateRes(stringList, t -> t.length() > 3 && t.startsWith("枫夜"));
         res.forEach(System.out::println);
     }

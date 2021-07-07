@@ -3,6 +3,7 @@ package MethodAndConstructorRef;
 import Lamdba.comparator.Employee;
 import org.junit.Test;
 import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
@@ -24,6 +25,10 @@ public class TestConstructorRef {
 
     @Test
     public void test1(){
+        Function<Integer, Employee> fun = (x) -> new Employee(x);
+        Employee emp1 = fun.apply(20);
+        System.out.println(emp1);
+
         BiFunction<String, Integer, Employee> bif = (p1, p2) -> new Employee();
         //上面形式等价于
         BiFunction<String, Integer, Employee> bif1 = Employee::new;  //需要Employee有对应的构造方法

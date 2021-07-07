@@ -1,5 +1,7 @@
 package Lamdba.lambda.practice;
 
+import DefaultAndStaticMethod.MyFunction;
+import DefaultAndStaticMethod.MyFunction2;
 import Lamdba.comparator.Employee;
 import org.junit.Test;
 
@@ -23,13 +25,27 @@ public class PracticeDemo {
             if(e1.getAge() == e2.getAge()){
                 return e1.getName().compareTo(e2.getName());
             }else {
-                return e2.getAge().compareTo(e1.getAge());
+                return Integer.compare(e1.getAge(), e2.getAge());
             }
         });
         empList.forEach(System.out::println);
     }
 
-    //需求2：使用ICaculateFuction接口计算两个long型参数的和，再计算两个long型参数的积
+    //需求2：用于处理字符串
+    @Test
+    public void getStrVal(){
+        String strTrim = strHandler("\t\t\t 我大尚硅谷威武", String::trim);
+        System.out.println(strTrim);
+
+        String upper = strHandler("abcdefg", str -> str.toUpperCase());
+        System.out.println(upper);
+    }
+
+    public String strHandler(String str, MyStrFunction msf){
+        return msf.getValue(str);
+    }
+
+    //需求3：使用ICaculateFuction接口计算两个long型参数的和，再计算两个long型参数的积
     @Test
     public void getVal(){
         Object val1 = cacluteVal(10L, 20L, (x, y) -> x + y);

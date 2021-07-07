@@ -26,7 +26,7 @@ public class TestStreamAPI {
         //3.通过Stream类中的静态方法0f()
         Stream<String> stream2 = Stream.of("aa", "bb", "cc");
         //4.创建无限流
-        //迭代
+        //迭代：如果不限制次数，就是无限迭代
         Stream<Integer> stream3 = Stream.iterate(0, x -> x + 2);
         stream3.limit(10).forEach(System.out::println);
         //5.使用Strem.generate生成

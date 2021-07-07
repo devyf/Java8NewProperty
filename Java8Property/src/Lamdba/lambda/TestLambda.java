@@ -18,8 +18,9 @@ import java.util.function.Consumer;
  *     return Integer.compare(x, y);
  *  };
  *  语法格式五：若Lambda体中只有一条语句，return和大括号都可以省略不写
+ *  Comparator<Integer> comparator = (x, y) -> Integer.compare(x, y);
  *  语法格式六：Lambda表达式的参数列表的数据类型可以省略不写，因为JVM编译器可以通过上下文推断出数据类型，即“类型推断”
- *
+ *  (Integer x, Integer y) -> Integer.compare(x, y);
  *  总结：
  *  1.左右遇一括号省，左侧推断类型省
  *  2.Lambda表达式需要“函数式接口”的支持

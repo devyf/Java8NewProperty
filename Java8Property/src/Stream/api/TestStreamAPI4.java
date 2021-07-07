@@ -29,7 +29,7 @@ public class TestStreamAPI4 {
             .sorted()  //自然排序
             .forEach(System.out::println);
         System.out.println("---------------------------");
-        empList.stream()
+        empList.stream()  //定制排序：先按年龄排序，年龄相同按照薪资排序
                 .sorted((e1, e2) -> {
                     if(e1.getAge() != e1.getAge())
                         return e1.getAge().compareTo(e2.getAge());
